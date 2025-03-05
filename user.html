@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Pet Adoption Website</h2>
+
+        <!-- Browse Pets Section -->
+        <h3>Browse Pets</h3>
+        <div id="petCards" class="cards">
+            <!-- Pet cards will be injected here from JavaScript -->
+        </div>
+
+        <!-- Adopt a Pet Section -->
+        <h3>Adopt a Pet</h3>
+        <form id="adoptPetForm">
+            <label for="choosePet">Choose a Pet:</label>
+            <select id="choosePet">
+                <!-- Options for pets will be injected from JavaScript -->
+            </select>
+
+            <label for="adopterName">Your Name:</label>
+            <input type="text" id="adopterName" placeholder="Enter your name" required>
+
+            <label for="adopterEmail">Your Email:</label>
+            <input type="email" id="adopterEmail" placeholder="Enter your email" required>
+
+            <button type="submit">Submit Adoption Form</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

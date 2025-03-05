@@ -1,0 +1,187 @@
+<form id="loginForm">
+    <label for="role">Select Role:</label>
+    <select id="role" required>
+        <option value="">Select your role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+    </select>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+    
+        const role = document.getElementById('role').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        if (role && username && password) {
+            if (role === 'admin') {
+                // Redirect to Admin Dashboard
+                window.location.href = 'admin.html';
+            } else if (role === 'user') {
+                // Redirect to User Dashboard
+                window.location.href = 'index.html';
+            } else {
+                alert('Please select a valid role.');
+            }
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard - Pet Adoption</title>
+        <link rel="stylesheet" href="styless.css">
+    </head>
+    <body>
+        <header>
+            <h1>Admin Dashboard - Pet Adoption</h1>
+        </header>
+        
+        <div class="container">
+            <h2>Manage Pets</h2>
+    
+            <!-- Add Pet Form -->
+            <div class="form-container">
+                <h3>Add a New Pet</h3>
+                <form id="addPetForm">
+                    <label for="name">Pet Name:</label>
+                    <input type="text" id="name" required>
+    
+                    <label for="type">Type:</label>
+                    <select id="type" required>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Bird">Bird</option>
+                    </select>
+    
+                    <label for="breed">Breed:</label>
+                    <input type="text" id="breed" required>
+    
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" min="0" required>
+    
+                    <button type="submit">Add Pet</button>
+                </form>
+            </div>
+    
+            <!-- Pet Listings Table -->
+            <div class="pet-list-container">
+                <h3>Current Pets for Adoption</h3>
+                <table id="petTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Breed</th>
+                            <th>Age</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Pet Rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <script src="admin.js"></script>
+    </body>
+    </html>
+    /* admin-styles.css */
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
+    header {
+        background-color: #28a745;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2, h3 {
+        color: #28a745;
+    }
+    
+    .form-container {
+        margin-bottom: 30px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    .pet-list-container {
+        margin-top: 40px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    th {
+        background-color: #28a745;
+        color: white;
+    }
+    
+    td {
+        text-align: center;
+    }
+    
+    .actions button {
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    .actions button:hover {
+        background-color: #c82333;
+    }
+            

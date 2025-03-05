@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pet Adoption Website</h1>
+    </header>
+
+    <!-- Browse Pets Section -->
+    <section id="pet-list">
+        <h2>Browse Pets</h2>
+        <div class="pet-container" id="pet-container">
+            <!-- Pets will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Adoption Form -->
+    <section id="adoption-form-section">
+        <h2>Adopt a Pet</h2>
+        <form id="adoption-form">
+            <label for="pet-select">Choose a Pet:</label>
+            <select id="pet-select" required>
+                <option value="">Select a pet</option>
+            </select>
+
+            <label for="user-name">Your Name:</label>
+            <input type="text" id="user-name" placeholder="Enter your name" required>
+
+            <label for="user-email">Your Email:</label>
+            <input type="email" id="user-email" placeholder="Enter your email" required>
+
+            <button type="submit">Submit Adoption Form</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
